@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page not found — SwapDesk</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0b0a10" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237b39fc'/%3E%3Cpath d='M9 12.5h12.5l-3.25-3.25M23 19.5H10.5l3.25 3.25' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@500;600;700&family=Inter:wght@400&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh; display: flex; flex-direction: column; color: #fff; font: 16px/1.6 Inter, system-ui, sans-serif;
+    background: radial-gradient(60% 50% at 50% 38%, rgba(123,57,252,.28), transparent 70%), #0b0a10;
+  }
+  header { padding: 18px 24px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font: 600 15px Manrope, sans-serif; }
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 24px 80px; }
+  .code { font: 400 clamp(110px, 26vw, 220px)/1 "Instrument Serif", "Cormorant Garamond", Georgia, serif; letter-spacing: -.02em;
+    background: linear-gradient(180deg, #fff 20%, rgba(181,145,255,.35)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h1 { margin: 8px 0 0; font: 400 clamp(30px, 5vw, 46px)/1.15 "Instrument Serif", "Cormorant Garamond", Georgia, serif; }
+  h1 em { font-style: italic; }
+  p { margin: 14px 0 0; max-width: 460px; color: rgba(255,255,255,.62); }
+  .btns { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .btn { border-radius: 10px; padding: 13px 22px; font: 500 16px Manrope, sans-serif; text-decoration: none; transition: background .15s; }
+  .primary { background: #7b39fc; color: #fff; box-shadow: 0 8px 24px -8px rgba(123,57,252,.6); }
+  .primary:hover { background: #8f55ff; }
+  .ghost { background: #2b2344; color: #f6f7f9; }
+  .ghost:hover { background: #3a3058; }
+  footer { padding: 24px; text-align: center; font: 12px Manrope, sans-serif; color: rgba(255,255,255,.35); }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand home" href="/">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 1.5 30.5 16 16 30.5 1.5 16Z" fill="#fff" opacity=".18"/><path d="M9 12.5h12.5l-3.25-3.25M23 19.5H10.5l3.25 3.25" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    SwapDesk
+  </a>
+</header>
+<main>
+  <div class="code" aria-hidden="true">404</div>
+  <h1>This page <em>doesn’t</em> exist</h1>
+  <p>The link may be outdated or there’s a typo in the address. Exchange works as usual — start from the home page.</p>
+  <div class="btns">
+    <a class="btn primary home" href="/">Home page</a>
+  </div>
+</main>
+<script>
+  // GitHub Pages отдаёт эту страницу на любом неверном адресе, на любой глубине.
+  // Корень сайта: для *.github.io/<репозиторий>/ — первая папка, для своего домена — «/».
+  var base = location.hostname.endsWith("github.io") ? "/" + location.pathname.split("/")[1] + "/" : "/";
+  document.querySelectorAll(".home").forEach(function (a) { a.href = base + (a.dataset.hash || ""); });
+</script>
+</body>
+</html>
